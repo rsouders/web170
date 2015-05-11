@@ -81,7 +81,7 @@ $(document).ready(function(){
 <!-- End Old Navigation -->
 
 <!-- Start Nav -->
-<?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'container' => 'div', 'container_id' => 'nav', 'items_wrap' => 'ul id="menu" class="%2$s">%3$s</ul>', ) ); ?>
+<?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'container' => 'div', 'container_id' => 'nav',/* 'items_wrap' => '<ul id="menu" class="%2$s">%3$s</ul>',*/ ) ); ?>
 <!-- End Nav -->
 
 <div id="middle">
