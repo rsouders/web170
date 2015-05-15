@@ -483,6 +483,10 @@ End Old Nav Styles */
 	background:#CDBA96;
 }
 
+#nav ul li ul.sub-menu  {
+	display:none;	
+}
+
 #nav ul li.menu-item {
 	list-style:none;
 	line-height:3em;
@@ -518,7 +522,7 @@ End Old Nav Styles */
 		display:block;
 		font-size:1.1em;
 	}
-	#nav ul li.current-menu-item a  {	
+	#nav ul li.current-menu-item a, #nav ul li.current-menu-parent a  {	
 		color:#FAF4D1;
     	font-family: 'oldstyle_1hplhs'; 
 		text-decoration:none;

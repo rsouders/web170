@@ -417,6 +417,11 @@
 	margin:0 auto;
 }
 
+#nav ul li ul.sub-menu  {
+	display:block;	
+}
+
+
 }
 
 @media screen and (max-width: 450px)  {
