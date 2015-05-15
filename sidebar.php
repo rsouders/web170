@@ -9,28 +9,34 @@
                 <div id="submit">
 	                <input type="submit" value="Search" />
                 </div>
-            </div>
+            </div> <!-- End Search div -->
             </form>
             
         <!-- Start Sidebar Dynamic Sub-Nav --> 
         
         <div id="sub-navigation" class="widget">   
-
+		<?php if (is_page()) : //if we're on a "page" ?>
         <h2 class="sidebar">
 		<?php echo get_the_title($post->post_parent); //get the title of the gateway page ?>
         </h2> 
         	<ul class="sub-navigation-items">
-			<?php 
+				<?php 
+                if ($post->post_parent)  { //if the page we're displaying has a parent
+                    wp_list_pages( array( 'child_of' => $post->post_parent, 'title_li' => __(''))); //list the sub-pages but not the title
+                    
+                } else { //if the page we're displaying does NOT have a parent
+                    wp_list_pages( array( 'child_of' => $post->ID, 'title_li' => __(''))); //list the sub-pages but not the title
+                }
+                ?>
+            </ul> <!-- Can't figure out why UL displays, but LIs don't appear to be generated, let alone displayed. -->
             
-			if ($post->post_parent)  { //if the page we're displaying has a parent
-				wp_list_pages( array( 'child_of' => $post->post_parent, 'title_li' => __(''))); //list the sub-pages but not the title
-				
-			} else { //if the page we're displaying does NOT have a parent
-				wp_list_pages( array( 'child_of' => $post->ID, 'title_li' => __(''))); //list the sub-pages but not the title
-			}
-			?>
-            </ul> <!-- Can't figure out why UL displays, but LIs don't appear to be generated, let alone displayed -->
-
+		<?php endif; //end "pages" conditional ?>
+        <?php if (!(is_page())) : //if we're on something other than a page ?>
+        <h2 class="sidebar">Blog</h2>
+        <ul class="sub-navigation-items">
+		<?php wp_list_categories(array('title_li' => __(''))); //show the categories without a title ?>
+        </ul>
+        <?php endif; //end not-page conditional ?> <!-- This part works. Why doesn't the is_page conditional?? -->
 		</div> <!-- End div id sub-nav -->
         <!-- End Sidebar Dynamic Sub-Nav -->     
          
