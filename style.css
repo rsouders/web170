@@ -584,6 +584,11 @@ hr  {
 
 	}
 	
+	#sidebar ul.sub-navigation-items  {
+	margin-left:5px;	
+	margin-bottom:10px;
+	}
+	
 #footer  {
 	background:#562222;
 	width:100%;
