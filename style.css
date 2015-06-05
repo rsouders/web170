@@ -571,6 +571,56 @@ hr  {
 			padding-right:5px;
 			text-decoration:none;
 		}
+	
+	#s  {
+		width:95%;
+		font-family: 'oldstyle_1hplhs';
+		font-size:1em;
+		margin-left:2%;
+		padding-left:1.5%;
+		margin-bottom:2%;
+	}
+		
+	#searchsubmit  {
+		background: #562222;
+  		opacity: .85;
+  		color: #FAF4D1;
+		font-family: 'oldstyle_1hplhs';
+		font-size:1em;
+		width:30%;
+		text-align:center;
+		float:right;
+		border-radius:5px;
+		margin-bottom:3%;
+		margin-right:2%;
+	}
+	
+	#meta-3 h2  {
+		font-family: 'oldstyle_1hplhs'; 
+		font-weight:100;
+		padding-left:10px;
+		padding-bottom:10px;
+		margin-bottom:10px;
+		background:#562222;
+		opacity:.85;
+		color:#FAF4D1;
+		font-size:1.3em;
+		clear:both;
+	}
+	
+	#meta-3 ul  {
+		margin-left:5px;	
+		margin-bottom:10px;	
+	}
+
+		
+blockquote  {
+	font-size:1.2em;
+	color:black;	
+	border-left:2px /*#562222*/black solid;
+	padding-left:5px;
+	margin:10px 15px;
+}
 		
 #sidebar ul  {
 		

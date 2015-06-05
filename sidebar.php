@@ -1,16 +1,8 @@
     <!-- Start Sidebar -->
     <div id="sidebar">
+
     	<h2 class="sidebar">Search this Site</h2>
-        	<form>
-            <div id="search">
-            	<div id="textinput">
-                	<input type="text" name="searchstring" maxlength="200" />
-                </div>
-                <div id="submit">
-	                <input type="submit" value="Search" />
-                </div>
-            </div> <!-- End Search div -->
-            </form>
+        <?php get_search_form(); ?>
             
         <!-- Start Sidebar Dynamic Sub-Nav --> 
         
@@ -20,6 +12,10 @@
 		<?php echo get_the_title($post->post_parent); //get the title of the gateway page ?>
         </h2> 
         	<ul class="sub-navigation-items">
+            
+            
+            <?php /*wp_list_pages();*/ ?>
+            
 				<?php 
                 if ($post->post_parent)  { //if the page we're displaying has a parent
                     wp_list_pages( array( 'child_of' => $post->post_parent, 'title_li' => __(''))); //list the sub-pages but not the title
@@ -28,7 +24,7 @@
                     wp_list_pages( array( 'child_of' => $post->ID, 'title_li' => __(''))); //list the sub-pages but not the title
                 }
                 ?>
-            </ul> <!-- Can't figure out why UL displays, but LIs don't appear to be generated, let alone displayed. -->
+            </ul> 
             
 		<?php endif; //end "pages" conditional ?>
         <?php if (!(is_page())) : //if we're on something other than a page ?>
@@ -39,6 +35,16 @@
         <?php endif; //end not-page conditional ?> <!-- This part works. Why doesn't the is_page conditional?? -->
 		</div> <!-- End div id sub-nav -->
         <!-- End Sidebar Dynamic Sub-Nav -->     
+        
+        <!-- Start quote -->
+			<?php if (get_post_meta($post->ID, 'pullquote', true)) : //if there is a quote on this page... ?>
+            	<blockquote><?php echo get_post_meta($post->ID, 'pullquote', true) ?></blockquote>
+            <?php endif; ?>
+    	<!-- End quote -->
+    
+    <!-- Start Dynamic Sidebar -->
+        <?php dynamic_sidebar(1); //call widgets chosen through dashboard ?>
+    <!-- End Dynamic Sidebar -->
          
         <h2 class="sidebar">Upcoming Events</h2> <!--To be replaced with dynamic content-->
         	<h4><a href="">Event One</a></h4>
