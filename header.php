@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title><?php bloginfo('description'); ?> | <?php bloginfo('name') ?>;</title>
+<title><?php get_my_title_tag(); ?></title>
 
 <!-- Start Styles -->
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="all" />
@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="<?php bloginfo('template_directory')?>/css/media.css" type="text/css"  >
 
 <meta name='robots' content='noindex,follow' />
+<meta name="description" content="<?php echo strip_tags(get_the_excerpt()); ?>" /> <!-- Pull page's excerpt and use as meta description tag.-->
 <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0" />
 
 <link rel="stylesheet" href="<?php bloginfo('template_directory')?>/SlickNav-master/slicknav.css" />
